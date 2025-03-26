@@ -37,6 +37,14 @@
             footer{ border-top:1px solid #eee; margin-top:3rem; padding-bottom:3rem; }
             
             footer > p{ display:flex; justify-content: space-between; }
+            td img {
+                width: 2.5rem;
+                height: 2.5rem;
+                border-radius: 50% 50%;
+                margin: 0.25;
+                box-shadow: 0 0 5px darkred;
+
+
         </style>
     </head>
     <body>
@@ -60,11 +68,18 @@
                 </svg>
                 
                 <p>Aprovechando la ficción y algunas condiciones lógicas: Calculemos el número de personas como <a href="https://es.wikipedia.org/wiki/Rose_DeWitt_Bukater" target="_blank">Rose DeWitt Bukater</a> y <a href="https://es.wikipedia.org/wiki/Jack_Dawson" target="_blank">Jack Dawson</a>.</p>
+                <table>
+                    <tr> 
+                        <td>lasrose</td>
+
+                        <td>losjack</td>
+                    </tr>
+                </table>
 
             </main>
             <footer>
                 
-                <p><a href="https://github.com/profesorfaco/opr/tree/main/clase-04">DNO097</a> <a href="#">Nombre Apellido</a></p>
+                <p><a href="https://github.com/profesorfaco/opr/tree/main/clase-04">DNO097</a>  <a href="#">Nombre Apellido</a></p>
                 
             </footer>
         </div>
@@ -77,6 +92,11 @@
             var tercera = 0;
             const total = document.querySelector("#dato");
             const clases = document.querySelector("#segmentos");
+
+            var rose = 0;
+            var jack = 0;
+            const ellas = document.querySelector("#lasrose");
+            const ellos = document.querySelector("#losjack");
 
             Papa.parse("https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv", {
                 download: true,
@@ -92,12 +112,34 @@
                     results.data.forEach(d => {
                         if(d.Pclass == 1){
                             primera = primera+1;
+
+                            if (d.Survived == 1 && d.Sex == "female" && d.Age > 15 && d.Age < 19) {
+                                  rose = rose+1;
+                                   }
+
                         } else if(d.Pclass == 2){
                             segunda = segunda+1;
                         }else{
                             tercera = tercera+1;
+                            if (d.Survived == 0 && d.Sex == "male" && d.Age > 20 && d.Age < 24) {
+                                  jack = jack+1;
+                                   }
                         }
                     })
+
+
+                    console.log(rose);
+                    console.log(jack);
+
+                    for(let xx = 0; xx < rose; xx++){ 
+                        ellas.innerHTML += "<img src='img/rosee.png'>";
+                    }
+                    for(let xy = 0; xy < rose; xy++){ 
+                        ellos.innerHTML += "🖤";
+                    }
+
+
+
 
                     //trabajo con el resultado de la revisión
 
@@ -116,6 +158,10 @@
                 } // cierra lo abierto después de complete: function…
 
             }); // cierra lo abierto después de Papa.parse("https…
+
+
+            // D U P L I C A D O
+ 
 
         </script>
     </body>
