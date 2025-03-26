@@ -36,20 +36,39 @@
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 50% 50%;
-                margin: 0.25;
+                margin: 5px;
                 box-shadow: 0 0 5px black;
                 filter: grayscale(50%);
                  }
                 
-            div#cierre {
+            div#persona {
                 margin-top:10vh;
                 width:100%;
                 text-align: center; }
 
-            div#cierre img{
+            div#persona img{
                 width:30%;
                 margin: 0 auto;
                 animation: flota 1.5s ease infinite alternate; }
+
+            @keyframes nadar {
+                0%   {left:0px;}  
+                50%  {left:300px;} 
+                100% {left:0px;}
+            }
+
+            div#shark {
+                margin-top:10vh;
+                width:100%;
+                text-align: center;
+                position: relative; }
+
+            div#shark img{
+                width:30%;
+                margin: 0 auto;
+                animation: nadar;
+                animation-duration:5s }
+
 
 
         </style>
@@ -99,9 +118,11 @@
                     </tr>
                 </table>
 
+                 <div id="shark"> 
+                    <img src="https://www.svgrepo.com/show/295612/shark.svg" /> 
+                </div>
 
-
-                <div id="cierre"> 
+                <div id="persona"> 
                     <img src="https://www.svgrepo.com/show/295626/drowning-drown.svg" /> 
                 </div>
 
@@ -109,7 +130,7 @@
             <footer>
                 
                 <p><a href="https://github.com/profesorfaco/opr/tree/main/clase-04">DNO097</a>  <a href="https://github.com/valflores8">Valentina Flores</a></p>
-                
+
             </footer>
         </div>
 
@@ -178,7 +199,7 @@
                     for(let xx = 0; xx < rose; xx++){ 
                         ellas.innerHTML += "<img src='img/rosee.png'>";
                     }
-                    for(let xy = 0; xy < rose; xy++){ 
+                    for(let xy = 0; xy < jack; xy++){ 
                         ellos.innerHTML += "<img src='img/jackk.png'>";
                     }
 
