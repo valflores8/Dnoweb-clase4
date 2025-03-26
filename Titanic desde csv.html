@@ -51,23 +51,27 @@
                 margin: 0 auto;
                 animation: flota 1.5s ease infinite alternate; }
 
-            @keyframes nadar {
-                0%   {left:0px;}  
-                50%  {left:300px;} 
-                100% {left:0px;}
-            }
+            @keyframes tiburon {
+                0%   {color:black; left: 0%; }
+                25%  {color:red}
+                50%  {color:black; left: 70%;}
+                75%  {color:red}
+                100% {color:black; left:0%; }
+                }
 
             div#shark {
-                margin-top:10vh;
-                width:100%;
-                text-align: center;
-                position: relative; }
+                
+                position: relative;
+                animation-name: tiburon;
+                animation-duration: 8s;
+                animation-iteration-count: infinite;
+            }
 
             div#shark img{
+
                 width:30%;
                 margin: 0 auto;
-                animation: nadar;
-                animation-duration:5s }
+                }
 
 
 
