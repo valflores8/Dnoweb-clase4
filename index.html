@@ -42,8 +42,8 @@
                 height: 2.5rem;
                 border-radius: 50% 50%;
                 margin: 0.25;
-                box-shadow: 0 0 5px darkred;
-
+                box-shadow: 0 0 5px black;
+                
 
         </style>
     </head>
@@ -67,12 +67,12 @@
                     <g id="segmentos"></g>
                 </svg>
                 
-                <p>Aprovechando la ficción y algunas condiciones lógicas: Calculemos el número de personas como <a href="https://es.wikipedia.org/wiki/Rose_DeWitt_Bukater" target="_blank">Rose DeWitt Bukater</a> y <a href="https://es.wikipedia.org/wiki/Jack_Dawson" target="_blank">Jack Dawson</a>.</p>
+                <p>Aprovechando la ficción y algunas condiciones lógicas, sabemos que hubieron <span id="nrose"> </span> mujeres como <a href="https://es.wikipedia.org/wiki/Rose_DeWitt_Bukater" target="_blank">Rose DeWitt Bukater</a> y <span id="njack"></span> hombres como <a href="https://es.wikipedia.org/wiki/Jack_Dawson" target="_blank">Jack Dawson</a>.</p>
                 <table>
                     <tr> 
-                        <td>lasrose</td>
+                        <td id="lasrose"></td>
 
-                        <td>losjack</td>
+                        <td id="losjack"></td>
                     </tr>
                 </table>
 
@@ -97,6 +97,10 @@
             var jack = 0;
             const ellas = document.querySelector("#lasrose");
             const ellos = document.querySelector("#losjack");
+
+            var muertosdeprimera = 0
+            var muertosdesegunda = 0
+            var muertosdetercera = 0
 
             Papa.parse("https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv", {
                 download: true,
@@ -130,6 +134,14 @@
 
                     console.log(rose);
                     console.log(jack);
+
+                    console.log(muertosdeprimera)
+                    console.log(muertosdesegunda)
+                    console.log(muertosdetercera)
+
+
+                    document.querySelector("#nrose").innerHTML = rose;
+                    document.querySelector("#njack").innerHTML = jack;
 
                     for(let xx = 0; xx < rose; xx++){ 
                         ellas.innerHTML += "<img src='img/rosee.png'>";
