@@ -19,7 +19,7 @@
 
             @keyframes flota {
                 0% {transform: translateY(0);}
-                100% {transform: translateY(10px);}  }
+                100% {transform: translateY(18px);}  }
  
             polygon#iceberg { animation: flota 3s ease infinite alternate; }
             line#mar { animation: flota 2s ease infinite alternate; }
@@ -38,24 +38,22 @@
                 border-radius: 50% 50%;
                 margin: 5px;
                 box-shadow: 0 0 5px black;
-                filter: grayscale(50%);
+                filter: grayscale(80%);
                  }
                 
             div#persona {
-                margin-top:10vh;
-                width:100%;
+                margin-top:1vh;
+                width:70%;
                 text-align: center; }
 
             div#persona img{
                 width:30%;
                 margin: 0 auto;
-                animation: flota 1.5s ease infinite alternate; }
+                animation: flota 1s ease infinite alternate; }
 
             @keyframes tiburon {
                 0%   {color:black; left: 0%; }
-                25%  {color:red}
-                50%  {color:black; left: 70%;}
-                75%  {color:red}
+                50%  {color:black; left: 65%;} 
                 100% {color:black; left:0%; }
                 }
 
@@ -63,13 +61,13 @@
                 
                 position: relative;
                 animation-name: tiburon;
-                animation-duration: 8s;
+                animation-duration: 14s;
                 animation-iteration-count: infinite;
             }
 
             div#shark img{
 
-                width:30%;
+                width:38%;
                 margin: 0 auto;
                 }
 
@@ -122,13 +120,18 @@
                     </tr>
                 </table>
 
-                 <div id="shark"> 
-                    <img src="https://www.svgrepo.com/show/295612/shark.svg" /> 
-                </div>
+
 
                 <div id="persona"> 
                     <img src="https://www.svgrepo.com/show/295626/drowning-drown.svg" /> 
                 </div>
+
+
+                 <div id="shark"> 
+                    <img src="https://www.svgrepo.com/show/295612/shark.svg" /> 
+                </div>
+
+               
 
             </main>
             <footer>
