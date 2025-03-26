@@ -12,38 +12,45 @@
             div{ width:min(95%,700px); margin:0 auto;}
             
             a{color:#000;}
-
             a:hover{color:#333;}
             
             header{text-align: center; }
-
             header svg{ width: 75%; margin: 0 auto;}
 
             @keyframes flota {
                 0% {transform: translateY(0);}
-                100% {transform: translateY(10px);}
-            }
-
+                100% {transform: translateY(10px);}  }
+ 
             polygon#iceberg { animation: flota 3s ease infinite alternate; }
-
             line#mar { animation: flota 2s ease infinite alternate; }
 
+
             h1 { font-size: calc(1rem + 3vw); line-height: 1; font-weight: 200;}
-
             h1 > span {font-size: 90%; color: #111; font-weight: 200; display: inline-block; margin:0 0.5rem}
-
             p {margin:0.9rem 0.3rem;}
 
             footer{ border-top:1px solid #eee; margin-top:3rem; padding-bottom:3rem; }
-            
             footer > p{ display:flex; justify-content: space-between; }
+            
             td img {
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 50% 50%;
                 margin: 0.25;
                 box-shadow: 0 0 5px black;
+                filter: grayscale(50%);
+                 }
                 
+            div#cierre {
+                margin-top:10vh;
+                width:100%;
+                text-align: center; }
+
+            div#cierre img{
+                width:30%;
+                margin: 0 auto;
+                animation: flota 1.5s ease infinite alternate; }
+
 
         </style>
     </head>
@@ -68,6 +75,8 @@
                 </svg>
                 
                 <p>Aprovechando la ficción y algunas condiciones lógicas, sabemos que hubieron <span id="nrose"> </span> mujeres como <a href="https://es.wikipedia.org/wiki/Rose_DeWitt_Bukater" target="_blank">Rose DeWitt Bukater</a> y <span id="njack"></span> hombres como <a href="https://es.wikipedia.org/wiki/Jack_Dawson" target="_blank">Jack Dawson</a>.</p>
+               
+
                 <table>
                     <tr> 
                         <td id="lasrose"></td>
@@ -76,13 +85,37 @@
                     </tr>
                 </table>
 
+                <table>
+                    <tr>
+                            <td>
+                                <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"> <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ddd" stroke-width="3"></circle>  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#000" stroke-width="3" stroke-dasharray="37 63" stroke-dashoffset="0"></circle>   <text x="21" y="19" font-size="9" dominant-baseline="middle" text-anchor="middle">37%</text>   <text x="21" y="25" font-size="3" dominant-baseline="middle" text-anchor="middle">PRIMERA CLASE</text>
+                                </svg>  </td>
+                            <td>
+                                <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"> <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ddd" stroke-width="3"></circle>  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#000" stroke-width="3" stroke-dasharray="53 47" stroke-dashoffset="0"></circle>   <text x="21" y="19" font-size="9" dominant-baseline="middle" text-anchor="middle">53%</text> <text x="21" y="25" font-size="3" dominant-baseline="middle" text-anchor="middle">SEGUNDA CLASE</text>
+                                </svg>  </td>
+                            <td>
+                                <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut"> <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#ddd" stroke-width="3"></circle>  <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#000" stroke-width="3" stroke-dasharray="76 24" stroke-dashoffset="0"></circle>   <text x="21" y="19" font-size="9" dominant-baseline="middle" text-anchor="middle">76%</text> <text x="21" y="25" font-size="3" dominant-baseline="middle" text-anchor="middle">TERCERA CLASE</text>
+                                </svg>   </td>
+                    </tr>
+                </table>
+
+
+
+                <div id="cierre"> 
+                    <img src="https://www.svgrepo.com/show/295626/drowning-drown.svg" /> 
+                </div>
+
             </main>
             <footer>
                 
-                <p><a href="https://github.com/profesorfaco/opr/tree/main/clase-04">DNO097</a>  <a href="#">Nombre Apellido</a></p>
+                <p><a href="https://github.com/profesorfaco/opr/tree/main/clase-04">DNO097</a>  <a href="#">Valentina Flores</a></p>
                 
             </footer>
         </div>
+
+
+
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         
@@ -139,7 +172,6 @@
                     console.log(muertosdesegunda)
                     console.log(muertosdetercera)
 
-
                     document.querySelector("#nrose").innerHTML = rose;
                     document.querySelector("#njack").innerHTML = jack;
 
@@ -153,7 +185,10 @@
 
 
 
-                    //trabajo con el resultado de la revisión
+
+
+                    //trabajo con el resultado de la revisión  
+                    //barra
 
                     clases.innerHTML = `<rect x="0" y="0" width="${primera}" height="100" fill="#333"></rect>
                     <text x="${primera/2}" y="60" font-size="48" dominant-baseline="middle" text-anchor="middle" fill="#fff">${primera}</text>
